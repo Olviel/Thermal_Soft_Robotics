@@ -1,2 +1,0 @@
-P_open = 10
-P_open = 20
