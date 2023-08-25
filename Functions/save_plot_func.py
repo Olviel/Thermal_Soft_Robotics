@@ -17,7 +17,7 @@ def save_plot(name):
         os.makedirs(folder_path)
 
     # Create the filename with the folder path, time string, and given name
-    filename = os.path.join(folder_path, f'{time_string}_{name}.png')
+    filename = os.path.join(folder_path, f'{time_string}_{name}.svg')
 
     # Save the plot with the generated filename
     plt.savefig(filename)
