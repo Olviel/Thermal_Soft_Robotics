@@ -1,0 +1,1220 @@
+Application:     	HybridHeart
+Version:         	v1.62.7919.18482
+DateTime:        	2023-08-17 10:28:25
+Measurement #:   	0015
+User:            	soroma
+
+Sample name:     	Spa_100_kpa
+Description:     	
+SampleRate [/s]: 	500
+Average:         	1
+Script:          	Spicy.heart
+
+Mass flow Controller 01
+	Name:              	MassFlowControllerA
+	Substance:         	Brooks-0
+	Unit:              	SLPM
+	Calibration:       	F*2
+	Flow range [unit]: 	{From=0,To=5}
+	Control range [V]: 	{From=0,To=10}
+	Output channel:    	/Dev1/ao0
+
+Mass flow Controller 02
+	Name:              	MassFlowControllerB
+	Substance:         	Brooks-1
+	Unit:              	SLPM
+	Calibration:       	F*2
+	Flow range [unit]: 	{From=0,To=5}
+	Control range [V]: 	{From=0,To=10}
+	Output channel:    	/Dev1/ao1
+
+Mass flow Controller 03
+	Name:              	MassFlowControllerC
+	Substance:         	flowFesto-1
+	Unit:              	SLPM
+	Calibration:       	(9.8*(F+4/9.8))/20
+	Flow range [unit]: 	{From=0,To=20}
+	Control range [V]: 	{From=0,To=10}
+	Output channel:    	/Dev1/ao1
+
+Mass flow Controller 04
+	Name:              	MassFlowControllerD
+	Substance:         	presFesto-0
+	Unit:              	bar
+	Calibration:       	(F+1)*5
+	Flow range [unit]: 	{From=-1,To=1}
+	Control range [V]: 	{From=0,To=10}
+	Output channel:    	/Dev1/ao0
+
+Mass flow Controller 05
+	Name:              	MassFlowControllerE
+	Substance:         	presFesto-1
+	Unit:              	bar
+	Calibration:       	(F+1)*5
+	Flow range [unit]: 	{From=-1,To=1}
+	Control range [V]: 	{From=0,To=10}
+	Output channel:    	/Dev1/ao1
+
+Mass flow Controller 06
+	Name:              	MassFlowControllerF
+	Substance:         	presFesto5-1
+	Unit:              	bar
+	Calibration:       	(F+1) / 0.6
+	Flow range [unit]: 	{From=-1,To=5}
+	Control range [V]: 	{From=0,To=10}
+	Output channel:    	/Dev1/ao1
+
+Mass flow Controller 07
+	Name:              	MassFlowControllerG
+	Substance:         	presFesto5-0
+	Unit:              	bar
+	Calibration:       	(F+1) / 0.6
+	Flow range [unit]: 	{From=-1,To=5}
+	Control range [V]: 	{From=0,To=10}
+	Output channel:    	/Dev1/ao0
+
+Mass flow Controller 08
+	Name:              	MassFlowControllerH
+	Substance:         	motorspeed-1
+	Unit:              	speed
+	Calibration:       	-F+3
+	Flow range [unit]: 	{From=-2,To=2}
+	Control range [V]: 	{From=0,To=5}
+	Output channel:    	/Dev1/ao1
+
+Mass flow Controller 09
+	Name:              	MassFlowControllerI
+	Substance:         	nmp850
+	Unit:              	speed_pct
+	Calibration:       	(F/100)*5
+	Flow range [unit]: 	{From=0,To=100}
+	Control range [V]: 	{From=0,To=5}
+	Output channel:    	/Dev1/ao0
+
+Digital Output Controller 01
+	Name:              	DigitalOutputControllerA
+	Switch:            	DigOut-1
+	Invert:            	True
+	Output channel:    	/Dev1/port1/line1
+
+Digital Output Controller 02
+	Name:              	DigitalOutputControllerB
+	Switch:            	DigOut-2
+	Invert:            	True
+	Output channel:    	/Dev1/port1/line2
+
+Digital Output Controller 03
+	Name:              	DigitalOutputControllerC
+	Switch:            	DigOut-3
+	Invert:            	True
+	Output channel:    	/Dev1/port1/line3
+
+Digital Output Controller 04
+	Name:              	DigitalOutputControllerD
+	Switch:            	DigOut-4
+	Invert:            	True
+	Output channel:    	/Dev1/port1/line4
+
+Sensor 01
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 02
+	Name:            	Q_pump
+	Quantity:        	Q_pump
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai0
+
+Sensor 03
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 04
+	Name:            	Q_valve
+	Quantity:        	Q_valve
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai8
+
+Sensor 05
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 06
+	Name:            	flowFesto-1
+	Quantity:        	flowFesto-1
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai8
+
+Sensor 07
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 08
+	Name:            	presFesto-0
+	Quantity:        	presFesto-0
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai0
+
+Sensor 09
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 10
+	Name:            	presFesto-1
+	Quantity:        	presFesto-1
+	Unit:            	V
+	Enabled:         	True
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai8
+
+Sensor 11
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 12
+	Name:            	presFesto5-1
+	Quantity:        	presFesto5-1
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai8
+
+Sensor 13
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 14
+	Name:            	DigOut-1
+	Quantity:        	DigOut-1
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	5-V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai6
+
+Sensor 15
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 16
+	Name:            	transonic-28pau-387
+	Quantity:        	transonic-28pau-387
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-100,To=100}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai4
+
+Sensor 17
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 18
+	Name:            	RVP
+	Quantity:        	RVP
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	(V-5)*1551/5
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai7
+
+Sensor 19
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 20
+	Name:            	motorspeed-1
+	Quantity:        	motorspeed-1
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai8
+
+Sensor 21
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 22
+	Name:            	right-pre-12
+	Quantity:        	right-pre-12
+	Unit:            	mmHg
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	(V-0.5)*187.5/4
+	Range [unit]:    	{From=0,To=1875}
+	Input range [V]: 	{From=0,To=5}
+	Input channel:   	Dev1/ai12
+
+Sensor 23
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 24
+	Name:            	left-pre-5
+	Quantity:        	left-pre-5
+	Unit:            	mmHg
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	(V-0.5)*187.5/4
+	Range [unit]:    	{From=0,To=1875}
+	Input range [V]: 	{From=0,To=5}
+	Input channel:   	Dev1/ai5
+
+Sensor 25
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 26
+	Name:            	left-after-13
+	Quantity:        	left-after-13
+	Unit:            	mmHg
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	(V-0.5)*187.5/4
+	Range [unit]:    	{From=0,To=1875}
+	Input range [V]: 	{From=0,To=5}
+	Input channel:   	Dev1/ai13
+
+Sensor 27
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 28
+	Name:            	right-after-1
+	Quantity:        	right-after-1
+	Unit:            	mmHg
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	(V-0.5)*187.5/4
+	Range [unit]:    	{From=0,To=1875}
+	Input range [V]: 	{From=0,To=5}
+	Input channel:   	Dev1/ai1
+
+Sensor 29
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 30
+	Name:            	AWM5-5
+	Quantity:        	AWM5-5
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai5
+
+Sensor 31
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 32
+	Name:            	AWM10-5
+	Quantity:        	AWM10-5
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai5
+
+Sensor 33
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 34
+	Name:            	AWM10-13
+	Quantity:        	AWM10-13
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai13
+
+Sensor 35
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 36
+	Name:            	AWM15-13
+	Quantity:        	AWM15-13
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai13
+
+Sensor 37
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 38
+	Name:            	AWM15-1
+	Quantity:        	AWM15-1
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai1
+
+Sensor 39
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 40
+	Name:            	AWM20-1
+	Quantity:        	AWM20-1
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai1
+
+Sensor 41
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 42
+	Name:            	AWM20-12
+	Quantity:        	AWM20-12
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai12
+
+Sensor 43
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 44
+	Name:            	LVOF-2
+	Quantity:        	LVOF-2
+	Unit:            	l/min
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V*32/5
+	Range [unit]:    	{From=0,To=32}
+	Input range [V]: 	{From=0,To=5}
+	Input channel:   	Dev1/ai2
+
+Sensor 45
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 46
+	Name:            	RVOF-11
+	Quantity:        	RVOF-11
+	Unit:            	l/min
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V*32/5
+	Range [unit]:    	{From=0,To=32}
+	Input range [V]: 	{From=0,To=5}
+	Input channel:   	Dev1/ai11
+
+Sensor 47
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 48
+	Name:            	MPX100-2
+	Quantity:        	MPX100-2
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai2
+
+Sensor 49
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 50
+	Name:            	MPX100-11
+	Quantity:        	MPX100-11
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai11
+
+Sensor 51
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 52
+	Name:            	MPX100-10
+	Quantity:        	MPX100-10
+	Unit:            	V
+	Enabled:         	True
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai10
+
+Sensor 53
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 54
+	Name:            	MPX100-4
+	Quantity:        	MPX100-4
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai4
+
+Sensor 55
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 56
+	Name:            	MPX250-10
+	Quantity:        	MPX250-10
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai10
+
+Sensor 57
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 58
+	Name:            	MPX250-4
+	Quantity:        	MPX250-4
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai4
+
+Sensor 59
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 60
+	Name:            	MPX700-9
+	Quantity:        	MPX700-9
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai9
+
+Sensor 61
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 62
+	Name:            	MPX700-10
+	Quantity:        	MPX700-10
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai10
+
+Sensor 63
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 64
+	Name:            	HAF075#1-3
+	Quantity:        	HAF075#1-3
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai3
+
+Sensor 65
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 66
+	Name:            	HAF075#2-9
+	Quantity:        	HAF075#2-9
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai9
+
+Sensor 67
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 68
+	Name:            	MPX100-3
+	Quantity:        	MPX100-3
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai3
+
+Sensor 69
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 70
+	Name:            	MPX100-9
+	Quantity:        	MPX100-9
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai9
+
+Sensor 71
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 72
+	Name:            	MPX700-2
+	Quantity:        	MPX700-2
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai2
+
+Sensor 73
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 74
+	Name:            	temperature
+	Quantity:        	temperature
+	Unit:            	deg C
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V*15
+	Range [unit]:    	{From=0,To=150}
+	Input range [V]: 	{From=0,To=10}
+	Input channel:   	Dev1/ai10
+
+Sensor 75
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 76
+	Name:            	SSCDP01-4
+	Quantity:        	SSCDP01-4
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai4
+
+Sensor 77
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 78
+	Name:            	SSCDP01-3
+	Quantity:        	SSCDP01-3
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai3
+
+Sensor 79
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 80
+	Name:            	SSCDP01-9
+	Quantity:        	SSCDP01-9
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai9
+
+Sensor 81
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 82
+	Name:            	SSCDP30-10
+	Quantity:        	SSCDP30-10
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	v
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai10
+
+Sensor 83
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 84
+	Name:            	SSCDP05-3
+	Quantity:        	SSCDP05-3
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai3
+
+Sensor 85
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 86
+	Name:            	SSCDP15-4
+	Quantity:        	SSCDP15-4
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai4
+
+Sensor 87
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 88
+	Name:            	SSCDP15-3
+	Quantity:        	SSCDP15-3
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai3
+
+Sensor 89
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 90
+	Name:            	SSCDP15-11
+	Quantity:        	SSCDP15-11
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai11
+
+Sensor 91
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 92
+	Name:            	Ruler-2
+	Quantity:        	Ruler-2
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai2
+
+Sensor 93
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 94
+	Name:            	Loadcell-13
+	Quantity:        	Loadcell-13
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai13
+
+Sensor 95
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 96
+	Name:            	SSCDP30-9
+	Quantity:        	SSCDP30-9
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai9
+
+Sensor 97
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 98
+	Name:            	DigOut-2
+	Quantity:        	DigOut-2
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	5-V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai14
+
+Sensor 99
+	Name:            	dummy
+	Quantity:        	dummy
+	Unit:            	dum
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai15
+
+Sensor 100
+	Name:            	DigOut-3
+	Quantity:        	DigOut-3
+	Unit:            	V
+	Enabled:         	False
+	Decimal places:  	3
+	Calibration:     	V
+	Range [unit]:    	{From=-10,To=10}
+	Input range [V]: 	{From=-10,To=10}
+	Input channel:   	Dev1/ai7
+
+Analog sensor values in text format in analogsensorvalues.txt.
+Digital sensor values in text format in digitalsensorvalues.txt.
+

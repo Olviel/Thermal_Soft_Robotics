@@ -1,0 +1,5 @@
+wait 10 sec 
+setpoint presFesto-1 to 1.0 in 20 s
+wait 20 min 
+setpoint presFesto-1 to 0
+
