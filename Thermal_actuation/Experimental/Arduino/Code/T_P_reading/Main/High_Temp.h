@@ -29,8 +29,9 @@ public:
 
     HighTemp(int _pinTmp, int _pinThmc);
     
-    float getRoomTmp();                      // 
+    float getRoomTmp(int &analogValue);                      // 
     float getThmc();
+    float getRoomRes();                      // Add this line for getRoomRes
     
     void begin();
 

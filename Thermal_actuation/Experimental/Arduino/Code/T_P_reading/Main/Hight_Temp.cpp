@@ -51,8 +51,8 @@ HighTemp::HighTemp(int _pinTmp, int _pinThmc)
 
 void HighTemp::begin()
 {
-
-    tempRoom   = getRoomTmp();
+    int analogValue;  // Declare an integer to hold the analog value
+    tempRoom = getRoomTmp(analogValue);  // Update the call;
     
     Serial.print("tempRoom = ");
     Serial.println(tempRoom);
@@ -66,8 +66,9 @@ void HighTemp::begin()
 
 float HighTemp::getThmc()
 {
+    int analogValue;  // Declare analogValue here
     float vol  = getThmcVol();
-    tempRoom   = getRoomTmp();
+    tempRoom   = getRoomTmp(analogValue);  // Now analogValue is in scope
     float ax = 1.1507160636340676; // Coefficient for TC
     float b = 2.5175498719382787;  // Constant offset
 
@@ -90,20 +91,22 @@ int HighTemp::getAnalog(int pin)
 }
 
 
-float HighTemp::getRoomTmp()
+float HighTemp::getRoomTmp(int &analogValue)
 {
-    int a = getAnalog(pinRoomTmp)*50/33;                                // 3.3V supply
-    float resistance=(float)(1023-a)*10000/a;                           // get the resistance of the sensor;
-    float temperature=1/(log(resistance/10000)/3975+1/298.15)-273.15;   // convert to temperature via datasheet ;
+    // No need to redeclare analogValue; it's already a parameter
+    analogValue = getAnalog(pinRoomTmp) * 50 / 33;  // 3.3V supply
+    float resistance = (float)(1023 - analogValue) * 10000 / analogValue;  // get the resistance of the sensor
+    float temperature = 1 / (log(resistance / 10000) / 3975 + 1 / 298.15) - 273.15;  // convert to temperature via datasheet
     
-    
-    //Serial.print("a = ");Serial.println(a);
-    //Serial.print("resistance = ");Serial.println(resistance);
-   // Serial.print("temperature = ");Serial.println(temperature);
+    // Uncomment these lines if you want to debug
+    // Serial.print("a = "); Serial.println(analogValue);
+    // Serial.print("resistance = "); Serial.println(resistance);
+    // Serial.print("temperature = "); Serial.println(temperature);
     
     tempRoom = temperature;
     return temperature;
 }
+
 
 
 float HighTemp::getThmcVol()                                             // get voltage of thmc in mV

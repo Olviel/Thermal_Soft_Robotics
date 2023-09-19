@@ -2,9 +2,9 @@
 #include <SD.h>
 #include "High_Temp.h"
 
-const int pressurePin = A0;  // Pressure sensor is at A0
+const int pressurePin = A1;  // Pressure sensor is at A1
 const float REFERENCE_VOLTAGE = 5.0;
-const int chipSelect = 10;
+const int chipSelect = 2;
 const int greenLEDPin = 8; // Pin connected to the green LED
 const int redLEDPin = 9;   // Pin connected to the red LED
 
@@ -20,10 +20,14 @@ void setup() {
     Serial.println("Card initialization failed!");
     digitalWrite(redLEDPin, HIGH);  // Turn on the red LED continuously
     while (1);  // Halt further execution
-  }
-  Serial.println("Card initialized.");
+}
 
-  Serial.println("Crowtail - Thermocouple sensor test demo");
+
+  if (!SD.exists("data.csv")) {
+    File dataFile = SD.open("data.csv", FILE_WRITE);
+    dataFile.close();
+}
+  Serial.println("Card initialized.");
   ht.begin();
 }
 
@@ -31,21 +35,25 @@ void loop() {
   int pressureValue = analogRead(pressurePin);
   float pressureVoltage = (pressureValue / 1023.0);
   float P  =(pressureVoltage-0.04+0)/0.009;
-  
+  int analogValue;  // Variable to hold the analog value of the room temperature sensor
+  float roomTemp = ht.getRoomTmp(analogValue);  // Get the room temperature and its analog value
+
 
 
   File dataFile = SD.open("data.csv", FILE_WRITE);
   
   if (dataFile) {
-    dataFile.print(millis());
+  dataFile.print(millis()/1000);
     dataFile.print(",");
     dataFile.print(pressureVoltage);
     dataFile.print(",");
     dataFile.print(ht.getThmcVol());
     dataFile.print(",");
-    dataFile.println(ht.getRoomTmp());
+    dataFile.print(roomTemp);
+    dataFile.print(",");
+    dataFile.println(analogValue);  // Print the analog value to the CSV file
     dataFile.close();
-    
+
     // Print the voltage readings to Serial Monitor
     Serial.print("Pressure Voltage: ");
     Serial.print(pressureVoltage);
@@ -53,9 +61,11 @@ void loop() {
     Serial.print(P);
     Serial.print(" Temperature TC: ");
     Serial.print(ht.getThmc());
-    Serial.print("Temperature amb: ");
-    Serial.print(ht.getRoomTmp());
-    Serial.print("deg C written to SD card.");
+    Serial.print(" Temperature Voltage: ");
+    Serial.print(ht.getThmcVol());
+    Serial.print(" [mV] Temperature amb: ");
+    Serial.print(ht.getRoomTmp(analogValue));
+    Serial.println(" deg C written to SD card.");
 
     successBlink();
   } else {
@@ -66,9 +76,9 @@ void loop() {
   // Check if the temperature is below 0 or above 100
   float temperatureTC = ht.getThmc(); // Read the temperature
   if (temperatureTC < 0 || temperatureTC > 100) {
-    temperatureWarningBlink();
+    //temperatureWarningBlink();
   }
-  delay(5000);  // Wait for 5 seconds before the next reading
+  delay(500);  // Wait for 5 seconds before the next reading
 }
 
 void successBlink() {
