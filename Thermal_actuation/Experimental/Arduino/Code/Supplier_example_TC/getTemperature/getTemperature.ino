@@ -16,6 +16,6 @@ void setup()
 
 void loop()
 {
-    Serial.println(ht.getThmc());
+    //Serial.println(ht.getThmc());
     delay(1000);
 }
