@@ -1,7 +1,7 @@
 # Define a function to compute heat transfer coefficient
 import numpy as np
 def compute_alpha_hour(num_rows, num_cols, D, v_wind, time_steps, hours):
-    #See example 7.4 solution analysis 2 of Dunfamentals of heat and mass transfer 
+    #See example 7.4 solution analysis 2 of Fundamentals of heat and mass transfer 
     
     alpha_hour = np.zeros((num_rows, num_cols, len(time_steps)))
     #Constants for heat transfer coefficient 
