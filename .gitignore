@@ -6,3 +6,4 @@ Thermal_actuation/Experimental/Fluidic/Rothmund_Pressure_release/Data/20231003_1
 *.txt
 Data/
 *.svg
+*.joblib
