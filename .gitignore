@@ -4,3 +4,5 @@ Thermal_actuation\Experimental\Fluidic\Rothmund_Pressure_release\Data\20231003_1
 Thermal_actuation/Experimental/Fluidic/Rothmund_Pressure_release/Data/20231003_171449_DS30_r9_h0/analogsensorvalues.txt
 
 *.txt
+Data/
+*.svg
