@@ -8,3 +8,5 @@ Data/
 *.svg
 *.joblib
 *.heart
+*.pyc
+*.swp
