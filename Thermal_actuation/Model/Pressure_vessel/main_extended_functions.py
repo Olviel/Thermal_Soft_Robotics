@@ -1,5 +1,29 @@
 import numpy as np
 
+def mu(T):
+    #source: 
+    # Calculates dynamic viscosity of air
+    # T: Temperature of the fluid [K]
+    # Output: dynamic viscosity
+
+    # Constants
+    mu0 = 1.716e-5
+    T0 = 273.15
+    S_mu   = 111
+
+    # Calculate dynamic viscosity
+    mu = mu0*((T0+S_mu)/(T+S_mu))*(T/T0)**(3/2)
+    return mu 
+
+def nu(T,rho_air):
+    # Calculates kinematic viscosity of air
+    # T: Temperature of the fluid [K]
+    # Output: kinematic viscosity
+
+    # Calculate kinematic viscosity
+    nu = mu(T)/rho_air
+    return nu
+
 # For all fomrula,s see table 3.3 in # https://link.springer.com/content/pdf/10.1007/978-981-10-0807-8.pdf
 def h_cap(di,do):
     # Calculates heat transfer coeefficient for two concentric cylinders
@@ -12,7 +36,7 @@ def h_cap(di,do):
     h = (X**3*(1/(di**(3/5))+1/(do**(3/5))**5))**(-1/4)
     return h
 
-def h_cpn(A, peri ,L, K, Cp,T_f, T_s, mu, nu, beta ):
+def h_cpn(A, peri ,L, K, Cp,T_f, T_s, mu, nu):
     # Calculates heat transfer coeefficient for free convection in closed cilinder 
     #System: horizontal cilinder
 
@@ -35,7 +59,7 @@ def h_cpn(A, peri ,L, K, Cp,T_f, T_s, mu, nu, beta ):
 
     X = A/peri
     delta_T = (T_f-T_s)
-    beta = 1/(np.avarage(T_f+T_s)) # Formula 3.23 c
+    beta = 1/(np.average([T_f,T_s])) # Formula 3.23 c
     Gr = (9.81*beta*delta_T*X**3)/(nu**2) # Formula 3.22d
 
     Pr = mu(T_f)*Cp/K #formula 3.22c
@@ -87,26 +111,3 @@ def machine_precision(num, den):
     frac = num / den
     return frac 
 
-def mu(T):
-    #source: 
-    # Calculates dynamic viscosity of air
-    # T: Temperature of the fluid [K]
-    # Output: dynamic viscosity
-
-    # Constants
-    mu0 = 1.716e-5
-    T0 = 273.15
-    S_mu   = 111
-
-    # Calculate dynamic viscosity
-    mu = mu0*((T0+S_mu)/(T+S_mu))*(T/T0)**(3/2)
-    return mu 
-
-def nu(T,rho_air):
-    # Calculates kinematic viscosity of air
-    # T: Temperature of the fluid [K]
-    # Output: kinematic viscosity
-
-    # Calculate kinematic viscosity
-    nu = mu(T)/rho_air
-    return nu

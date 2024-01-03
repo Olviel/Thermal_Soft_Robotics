@@ -12,4 +12,6 @@ Data/
 *.swp
 *.pyc 
 
+Functions/__pycache__/
+
 # test
