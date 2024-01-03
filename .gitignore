@@ -10,3 +10,6 @@ Data/
 *.heart
 *.pyc
 *.swp
+*.pyc 
+
+# test
