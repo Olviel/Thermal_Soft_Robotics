@@ -80,4 +80,19 @@ def machine_precision(num, den):
 
     # Calculate and return the fraction
     frac = num / den
-    return frac
+    return frac 
+
+def mu(T):
+    #source: 
+    # Calculates dynamic viscosity of air
+    # Input: temperature
+    # Output: dynamic viscosity
+
+    # Constants
+    mu0 = 1.716e-5
+    T0 = 273.15
+    S_mu   = 111
+
+    # Calculate dynamic viscosity
+    mu = mu0*((T0+S_mu)/(T+S_mu))*(T/T0)**(3/2)
+    return mu 
