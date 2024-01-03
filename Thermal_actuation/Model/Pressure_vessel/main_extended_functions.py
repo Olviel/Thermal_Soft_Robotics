@@ -61,9 +61,9 @@ def h_cpn(A, peri ,L, K, Cp,T_f, T_s, rho_air):
     delta_T = (T_f-T_s)
     beta = 1/(np.average([T_f,T_s])) # Formula 3.23 c
     Gr = (9.81*beta*delta_T*X**3)/(calc_nu(T_f,rho_air)**2) # Formula 3.22d
+    #print("beta:", beta, "Gr:", Gr, "n:", n, "X:", X, "delta_T:", delta_T, "nu:", calc_nu(T_f,rho_air)
 
-    Pr = calc_mu(T_f,rho_air)*Cp/K #formula 3.22c
-    print(Pr)
+    Pr = calc_mu(T_f)*Cp/K #formula 3.22c
     h = (K/L)*C*((Gr*Pr)**n)*K
     return h
 
