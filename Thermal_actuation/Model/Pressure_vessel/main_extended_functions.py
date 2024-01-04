@@ -66,7 +66,7 @@ def h_cpn(A, peri ,L, K, Cp,T_f, T_s, rho_air):
     Pr = calc_mu(T_f)*Cp/K #formula 3.22c
     h = (K/L)*C*((Gr*Pr)**n)*K
     
-    return h
+    return abs(h)
 
 def h_cac(v,D):
     # Convetion from container to ambient air 
