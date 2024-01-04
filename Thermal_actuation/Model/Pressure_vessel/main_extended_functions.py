@@ -15,13 +15,13 @@ def calc_mu(T):
     mu = mu0*((T0+S_mu)/(T+S_mu))*(T/T0)**(3/2)
     return mu 
 
-def calc_nu(T,rho_air):
+def calc_nu(T,rho):
     # Calculates kinematic viscosity of air
     # T: Temperature of the fluid [K]
     # Output: kinematic viscosity
 
     # Calculate kinematic viscosity
-    nu = calc_mu(T)/rho_air
+    nu = calc_mu(T)/rho
     return nu
 
 # For all fomrula,s see table 3.3 in # https://link.springer.com/content/pdf/10.1007/978-981-10-0807-8.pdf
@@ -111,4 +111,20 @@ def machine_precision(num, den):
     # Calculate and return the fraction
     frac = num / den
     return frac 
+
+def mu_novec(T): 
+    # Calculates dynamic viscosity of novec
+    # T: Temperature of the fluid [K]
+    # Output: dynamic viscosity
+
+    Z = 10**(10**(10.151-4.606*np.log(T)))-0.7
+    mu = Z - np.exp(-0.7-3.295*Z+0.6119*Z**2-0.3193*Z**3)
+    return mu
+
+def c_novec(T):
+    # Calculates specific heat capacity of novec
+    # T: Temperature of the fluid [K]
+    # Output: specific heat ca
+    c = 1223.2+3.0203*(T-273.15)
+    return c
 
