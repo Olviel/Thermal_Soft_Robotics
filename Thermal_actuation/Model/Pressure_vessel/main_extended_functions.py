@@ -15,13 +15,13 @@ def calc_mu(T):
     mu = mu0*((T0+S_mu)/(T+S_mu))*(T/T0)**(3/2)
     return mu 
 
-def calc_nu(T,rho):
-    # Calculates kinematic viscosity of air
+def calc_nu(mu,rho):
+    # Calculates kinematic viscosity of fluid
     # T: Temperature of the fluid [K]
     # Output: kinematic viscosity
 
     # Calculate kinematic viscosity
-    nu = calc_mu(T)/rho
+    nu = mu/rho
     return nu
 
 # For all fomrula,s see table 3.3 in # https://link.springer.com/content/pdf/10.1007/978-981-10-0807-8.pdf
@@ -36,7 +36,7 @@ def h_cap(di,do):
     h = (X**3*(1/(di**(3/5))+1/(do**(3/5))**5))**(-1/4)
     return h
 
-def h_cpn(A, peri ,L, K, Cp,T_f, T_s, rho_air):
+def h_cpn(A, peri ,L, K, Cp,T_f, T_s, rho_air, mu):
     # Calculates heat transfer coeefficient for free convection in closed cilinder 
     #System: horizontal cilinder
 
@@ -60,10 +60,10 @@ def h_cpn(A, peri ,L, K, Cp,T_f, T_s, rho_air):
     X = A/peri
     delta_T = abs(T_f-T_s)
     beta = 1/(np.average([T_f,T_s])) # Formula 3.23 c
-    Gr = (9.81*beta*delta_T*X**3)/(calc_nu(T_f,rho_air)**2) # Formula 3.22d
+    Gr = (9.81*beta*delta_T*X**3)/(calc_nu(mu,rho_air)**2) # Formula 3.22d
     #print("beta:", beta, "Gr:", Gr, "n:", n, "X:", X, "delta_T:", delta_T, "nu:", calc_nu(T_f,rho_air))
 
-    Pr = calc_mu(T_f)*Cp/K #formula 3.22c
+    Pr = mu*Cp/K #formula 3.22c
     h = (K/L)*C*((Gr*Pr)**n)*K
     
     return abs(h)
