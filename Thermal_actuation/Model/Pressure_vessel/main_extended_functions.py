@@ -1,6 +1,6 @@
 import numpy as np
 
-def calc_mu(T):
+def mu_air(T):
     #source: 
     # Calculates dynamic viscosity of air
     # T: Temperature of the fluid [K]
