@@ -113,7 +113,7 @@ def machine_precision(num, den):
     return frac 
 
 def mu_novec(T): 
-    # Calculates dynamic viscosity of novec
+    # Calculates dynamic viscosity of novec fluid
     # T: Temperature of the fluid [K]
     # Output: dynamic viscosity
 
