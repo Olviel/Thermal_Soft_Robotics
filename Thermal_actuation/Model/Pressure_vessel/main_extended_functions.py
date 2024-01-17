@@ -128,3 +128,10 @@ def c_novec(T):
     c = 1223.2+3.0203*(T-273.15)
     return c
 
+def rho_n_l(T):
+    # Calculates density of novec in liquid phase
+    # T: Temperature of the fluid [C]
+    # Output: density of novec in liquid phase
+
+    rho_n_l = 1472.6-2.880*T 
+    return rho_n_l
