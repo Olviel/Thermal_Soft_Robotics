@@ -38,7 +38,7 @@ def h_cap(di,do):
     return h
 
 def h_cpn(A, peri ,L, K, Cp,T_f, T_s, rho_air, mu):
-    # Calculates heat transfer coeefficient for free convection in closed cilinder 
+    # Calculates heat transfer coeefficient for free convection in horizontal closed cilinder 
     #System: horizontal cilinder
 
     # Inputs:
@@ -54,6 +54,7 @@ def h_cpn(A, peri ,L, K, Cp,T_f, T_s, rho_air, mu):
     # beta: thermal expansion coefficient of the medium 
 
     #Retun: heat transfer coefficient
+    
     C = 0.47
     n = 0.25
     K = 1
@@ -136,3 +137,12 @@ def rho_n_l(T):
 
     rho_n_l = 1472.6-2.880*T 
     return rho_n_l
+
+def K_air(T):
+    # Source: https://adsabs.harvard.edu/full/1951AuSRA...4..305K#:~:text=The%20temperature%20variation%20of%20the,air%20at%200%20%C2%B0C.
+    # Calculates thermal conductivity of air
+    # T: Temperature of the fluid [K]
+    # Output: thermal conductivity of air
+
+    K_air = 5.75E-5*(1+0.00317*T-0.0000021*T**2)
+    return K_air
