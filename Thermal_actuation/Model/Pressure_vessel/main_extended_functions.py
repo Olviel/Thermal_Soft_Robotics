@@ -13,6 +13,7 @@ def mu_air(T):
 
     # Calculate dynamic viscosity
     mu = mu0*((T0+S_mu)/(T+S_mu))*(T/T0)**(3/2)
+
     return mu 
 
 def calc_nu(mu,rho):
