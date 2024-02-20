@@ -119,9 +119,9 @@ def mu_novec(T):
     # T: Temperature of the fluid [K]
     # Output: dynamic viscosity
 
-    Z = 10**(10**(10.151-4.606*np.log(T)))-0.7
-    mu = Z - np.exp(-0.7-3.295*Z+0.6119*Z**2-0.3193*Z**3)
-    return mu
+    #Z = 10**(10**(10.151-4.606*np.log(T)))-0.7
+    #mu = Z - np.exp(-0.7-3.295*Z+0.6119*Z**2-0.3193*Z**3)
+    return 0.2
 
 def c_novec(T):
     # Calculates specific heat capacity of novec
