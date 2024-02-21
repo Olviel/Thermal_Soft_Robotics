@@ -11,6 +11,7 @@ Data/
 *.pyc
 *.swp
 *.pyc 
+*.bin
 
 Functions/__pycache__/
 
