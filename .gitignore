@@ -12,7 +12,10 @@ Data/
 *.swp
 *.pyc 
 *.bin
+*.png
+
 
 Functions/__pycache__/
+figures/
 
 # test
