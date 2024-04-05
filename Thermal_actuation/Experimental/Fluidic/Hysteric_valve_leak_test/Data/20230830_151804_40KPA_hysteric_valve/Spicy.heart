@@ -1,4 +1,0 @@
-wait 10 sec
-setpoint presFesto-1 to 0.4 in 90 sec 
-wait 5 sec 
-setpoint presFesto-1 to 0 in 90 sec
